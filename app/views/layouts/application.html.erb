@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Numberfacts</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Welcome to NumbersAPI!</h1>
+    <%= form_with method: :get do |form| %>
+        <%= form.text_field :month, placeholder: "MM" %>
+
+        <%= form.text_field :day, placeholder: "DD" %>
+
+        <%= form.text_field :year, placeholder: "YYYY" %>
+
+        <%= form.text_field :number, placeholder: "#" %>
+
+        <%= form.submit ("Search!") %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
